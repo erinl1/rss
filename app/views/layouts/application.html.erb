@@ -3,9 +3,52 @@
   <head>
     <title>Rss</title>
     <%= csrf_meta_tags %>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Muli">
+    <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Lato:300,600">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+    body {
+      padding-top: 80px;
+      font-family: 'Lato';
+    }
+    h1 {
+      font-family: 'Lato';
+      font-weight: 600;
+      color: #005b96;
+    }
+    .btn {
+    background-color: white;
+    border-color: black;
+    align-items: center;
+    margin: 8px;
+  }
+  .link:hover {
+    color: black;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background-color: black;
+    color: white;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .form-control {
+    width: 50%;
+  }
+    </style>
   </head>
 
   <body>

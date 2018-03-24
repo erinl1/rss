@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p> <h1>Websites</h1>
-<%= @feeds %>
-<% @feeds.entries.each do |entry| %>
+<!-- <%= @feeds %> -->
+<% @feeds.each do |feed| %>
+  <% feed.entries.each do |entry| %>
     <%= entry.title %><br>
+    <%= entry.summary %><br>
+    <%= entry.url %><br>
+    <%= entry.image %><br>
+    <%= entry.published %><br>
+    <br><br><br>
+  <% end %>
 <% end %>
 
 <br>

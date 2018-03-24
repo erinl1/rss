@@ -63,10 +63,7 @@ class WebsitesController < ApplicationController
   # DELETE /websites/1.json
   def destroy
     @website.destroy
-    respond_to do |format|
-      format.html { redirect_to websites_url, notice: 'Website was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to websites_path
   end
 
   private

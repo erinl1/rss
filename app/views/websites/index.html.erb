@@ -1,8 +1,12 @@
+<head>
+  <style>
+  </style>
+</head>
 <p id="notice"><%= notice %></p>
+<div class = 'container'>
 
-<h1>Websites</h1>
-
-<table>
+<center><h1>WEBSITES</h1>
+<table class ='table table-hover'>
   <thead>
     <tr>
       <th>Name</th>
@@ -16,15 +20,25 @@
       <tr>
         <td><%= website.name %></td>
         <td><%= website.url %></td>
-        <td><%= link_to 'Show', website %></td>
-        <td><%= link_to 'Edit', edit_website_path(website) %></td>
-        <td><%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a>Dropdown button</a>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <center>
+              <%= link_to 'Show', website, class: "link" %><br>
+              <%= link_to 'Edit', edit_website_path(website), class: "link" %><br>
+              <%= link_to 'Destroy', website_path(website), method: :delete, data: { confirm: 'Are you sure?' }, class: "link" %>
+            </center>
+          </td>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Website', new_website_path %>
-<%= button_to "View Stuff", root_path(@websites) %>
+<%= link_to 'New Website', new_website_path, class: "btn", style: 'a {font-weight: 300; color: black}' %>
+<%= link_to "View News", root_path(@websites), class: "btn", style: 'a {font-weight: 300; color: blue}' %>
+</div></center>
