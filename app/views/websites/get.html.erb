@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p> <h1>Websites</h1>
-<!-- <%= @feeds %> -->
-<% @feeds.each do |feed| %>
-  <% feed.entries.each do |entry| %>
-    <%= entry.title %><br>
-    <%= entry.summary %><br>
-    <%= entry.url %><br>
-    <%= entry.image %><br>
-    <%= entry.published %><br>
-    <br><br><br>
-  <% end %>
+<p id="notice"><%= notice %></p>
+<center><h1>RSS Feed</h1>
+<%= link_to 'View Websites', websites_path, class: "btn", style: 'a {font-weight: 300; color: black}' %></center><br>
+<div class = "row">
+ <%= @array %>
+<% @array.each do |entry| %>
+<div class = 'col-md-4 flex-column'>
+  <div class = "box">
+  <%= link_to entry.title, entry.url, target: :_blank %><br>
+  <%= entry.summary %><br>
+  by: <%= entry.author %><br>
+  <!-- <%= entry.image %> -->
+  <%= entry.published.strftime('%v') + " " + entry.published.strftime('%r')%><br>
+</div>
+</div>
 <% end %>
 
 <br>
+</div>

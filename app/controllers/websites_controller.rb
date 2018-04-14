@@ -23,8 +23,20 @@ class WebsitesController < ApplicationController
   end
 
   def get
+    # feeds = Website.all.map{|website|
+    #   Feedjira::Feed.fetch_and_parse(website.url)
+    # }
+    # puts feeds
+
     @feeds = Website.all.map{|website|
-      Feedjira::Feed.fetch_and_parse(website.url)
+      entries = Feedjira::Feed.fetch_and_parse(website.url).entries
+      puts entries
+      array = entries.flatten
+      @array = array.sort_by{ |t|
+        t.published
+      }.reverse
+      array
+
     }
   end
 

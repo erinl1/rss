@@ -18,25 +18,40 @@
     }
     h1 {
       font-family: 'Lato';
-      font-weight: 600;
-      color: #005b96;
+      font-weight: 700;
+      color: #db5858;
     }
     .btn {
     background-color: white;
     border-color: black;
     align-items: center;
     margin: 8px;
+    a {
+      color: #e17e7e;
+    }
   }
   .link:hover {
     color: black;
     text-decoration: none;
     font-weight: 400;
   }
-  a:hover {
-    color: black;
-    text-decoration: none;
-  }
+  a:link {
+    color: #6ca0dc;
+}
 
+a:hover {
+  color: #4b709a;
+  text-decoration: none;
+}
+.title:link {
+  color: #ef7c7a;
+}
+.title {
+  color: #ef7c7a;
+}
+.title:hover {
+  color: #bf6361;
+}
   .btn:hover {
     background-color: black;
     color: white;
@@ -48,10 +63,20 @@
   .form-control {
     width: 50%;
   }
+  .box {
+
+    height: 100%;
+    padding: 5px;
+    font-size: 13px;
+  }
+  .col-md-3 {
+    padding: 20px;
+  }
     </style>
   </head>
-
+  <div class = "container">
   <body>
     <%= yield %>
   </body>
+</div>
 </html>
