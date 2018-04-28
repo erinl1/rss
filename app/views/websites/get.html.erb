@@ -1,19 +1,31 @@
+<script src="sorttable.js"></script>
 <p id="notice"><%= notice %></p>
 <center><h1>RSS Feed</h1>
 <%= link_to 'View Websites', websites_path, class: "btn", style: 'a {font-weight: 300; color: black}' %></center><br>
 <div class = "row">
- <%= @array %>
-<% @array.each do |entry| %>
-<div class = 'col-md-4 flex-column'>
-  <div class = "box">
-  <%= link_to entry.title, entry.url, target: :_blank %><br>
-  <%= entry.summary %><br>
-  by: <%= entry.author %><br>
-  <!-- <%= entry.image %> -->
-  <%= entry.published.strftime('%v') + " " + entry.published.strftime('%r')%><br>
-</div>
-</div>
+  <table class="table table-striped sortable" data-toggle="table"
+   data-url="https://api.github.com/users/wenzhixin/repos?type=owner&sort=full_name&direction=asc&per_page=100&page=1"
+   data-sort-name="stargazers_count"
+   data-sort-order="desc">
+    <thead>
+      <tr>
+        <th scope="col">title</th>
+        <th scope="col">summary</th>
+        <th scope="col">author</th>
+        <th scope="col">published</th>
+      </tr>
+    </thead>
+    <tbody>
+<% @feeds.each do |feed| %>
+  <% feed.entries.each do |entry| %>
+    <tr>
+    <td><%= link_to entry.title, entry.url, target: :_blank %></td>
+    <td><%= entry.summary %></td>
+    <td><%= entry.author %></td>
+    <td><%= entry.published.strftime("%m/%d/%Y") %></td>
+    </tr>
+  <% end %>
 <% end %>
-
-<br>
+</tbody>
+</table>
 </div>
